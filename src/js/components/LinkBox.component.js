@@ -23,10 +23,14 @@ export class LinkBox extends Component {
     render() {
 
         const isVertical = this.props.vertical ? " link-box--wrapper-v" : "";
+        const image = this.createBackgroundImage();
+        const hasImage = !image ? " link-box--no-image" : "";
 
         return (
-            <div className={ "link-box--wrapper" + isVertical }>
-                {this.createBackgroundImage()}
+            <div className={ "link-box--wrapper" + isVertical + hasImage}>
+                <div className="link-box__bg--wrapper">
+                    {image}
+                </div>
                 <p className="link-box__title">
                     {this.props.children}
                 </p>

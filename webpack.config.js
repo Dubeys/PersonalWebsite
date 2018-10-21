@@ -41,6 +41,21 @@ module.exports = {
           'css-loader?sourceMap',
           'sass-loader?sourceMap',
         ]
+      },
+
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          // 'url-loader?limit=10000',
+          {
+            loader: "file-loader",
+            options: {
+              name: '[name].[ext]?[hash:8]',
+              outputPath: 'dist/',
+              useRelativePath: true
+            }
+          }
+        ]
       }
 
     ]

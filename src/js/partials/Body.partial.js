@@ -10,8 +10,13 @@ export class Body extends Component {
 
 	render(){
 
+		const hiddenTitle = this.props.title ? <h2 className="app__body__title">{this.props.title}</h2> : null;
+		const hiddenDesc = this.props.description ? <h3 className="app__body__desc">{this.props.description}</h3> : null;
+
 		return (
-			<section id="body" className={this.props.class}>
+			<section className={"app__body " + this.props.className}>
+				{hiddenTitle}
+				{hiddenDesc}
 				{this.props.children}
 			</section>
 		);

@@ -7,6 +7,7 @@ import { Home } from "./js/pages/Home.page";
 import { Visual } from "./js/pages/Visual.page";
 import { Code } from "./js/pages/Code.page";
 import { Sound } from "./js/pages/Sound.page";
+import { PageLink } from "./js/components/PageLink.component";
 
 function setPageTitle(base,...strings){
     
@@ -42,12 +43,20 @@ class App extends Component {
 
     onPageChange(pageName,delay = 0) {
 
-        this.setState({pageClicked: true})
-        
-        setTimeout(() => {
-            this.setState({pageName: pageName, pageClicked: false});
-            setPageTitle(this.title, this.state.pageName.toUpperCase());
-        },delay * 1000)
+        if(this.state.pageName != pageName) {
+
+            this.setState({pageClicked: true})
+            
+            setTimeout(() => {
+                this.setState({pageName: pageName, pageClicked: false});
+                setPageTitle(this.title, this.state.pageName.toUpperCase());
+            },delay * 1000)
+
+            return
+        }
+
+        this.setState({ pageName: pageName, pageClicked: false });
+        setPageTitle(this.title, this.state.pageName.toUpperCase());
 
     }
 
@@ -64,7 +73,17 @@ class App extends Component {
 
         return (
             <div id="app">
-                {page}
+                <div className="app__page app__page--full">
+                    <header className="app__header">
+                        <PageLink onClick={this.onPageChange} page="home">
+                            <h1>igor</h1>
+                        </PageLink>
+                    </header>
+                    {page}
+                    <footer className="app__footer">
+
+                    </footer>
+                </div>
             </div>
         )
 
