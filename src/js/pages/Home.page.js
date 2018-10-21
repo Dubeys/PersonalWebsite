@@ -24,7 +24,7 @@ export class Home extends Component {
                 <nav className="home__nav">
 
                     <PageLink onClick={this.props.onPageLinkClick} page="code" className="link-box">
-                        <LinkBox vertical="true" image={codeImg}>Code</LinkBox>
+                        <LinkBox vertical="true" image={codeImg}>Coding</LinkBox>
                     </PageLink>
                     <PageLink onClick={this.props.onPageLinkClick} page="visuals" className="link-box">
                         <LinkBox vertical="true" image={visualsImg}>Visuals</LinkBox>
