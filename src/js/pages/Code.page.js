@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import { Body } from "../partials/Body.partial";
-import { PageLink } from "../components/PageLink.component";
 
 export class Code extends Component {
 
@@ -11,14 +10,19 @@ export class Code extends Component {
 
         this.title = "code";
 
+        this.state = {
+            listing: true,
+            element: ''
+        }
+
     }
 
     render() {
 
         return (
-            <Body>
+            <Body className={"code" + (this.props.pageTransition ? " fade-out" : "")}>
                 <h1>this is the code page</h1>
-                <PageLink onClick={this.props.onPageLinkClick} page="home">Home</PageLink>
+                
             </Body>
         );
 

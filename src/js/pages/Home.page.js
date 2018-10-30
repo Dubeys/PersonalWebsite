@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 
 import { Body } from "../partials/Body.partial";
-import { PageLink } from "../components/PageLink.component";
+import { Link } from "../components/Link.component";
 import { LinkBox } from "../components/LinkBox.component";
 
 import codeImg from '../../assets/images/code.png';
-import visualsImg from '../../assets/images/visuals.jpg';
+import visualsImg from '../../assets/images/visuals.png';
 import soundImg from '../../assets/images/sound.png';
 
 export class Home extends Component {
@@ -23,15 +23,15 @@ export class Home extends Component {
 
                 <nav className="home__nav">
 
-                    <PageLink onClick={this.props.onPageLinkClick} page="code" className="link-box">
-                        <LinkBox vertical="true" image={codeImg}>Coding</LinkBox>
-                    </PageLink>
-                    <PageLink onClick={this.props.onPageLinkClick} page="visuals" className="link-box">
-                        <LinkBox vertical="true" image={visualsImg}>Visuals</LinkBox>
-                    </PageLink>
-                    <PageLink onClick={this.props.onPageLinkClick} page="sound" className="link-box">
-                        <LinkBox vertical="true" image={soundImg}>Sound</LinkBox>
-                    </PageLink>
+                    <a href="https://github.com/Dubeys" target="_blank" className="link-box">
+                        <LinkBox vertical="true" image={codeImg}>code</LinkBox>
+                    </a>
+                    <Link onClick={this.props.onPageLinkClick} linkID="visuals" className="link-box">
+                        <LinkBox vertical="true" image={visualsImg}>visuals</LinkBox>
+                    </Link>
+                    <a href="https://soundcloud.com/dubeystep/tracks" target="_blank" className="link-box">
+                        <LinkBox vertical="true" image={soundImg}>sound</LinkBox>
+                    </a>
 
                 </nav>
 
@@ -42,3 +42,11 @@ export class Home extends Component {
 
 
 }
+
+//  <Link onClick={this.props.onPageLinkClick} linkID="code" className="link-box">
+    // <LinkBox vertical="true" image={codeImg}>code</LinkBox>
+// </Link>
+
+// <Link onClick={this.props.onPageLinkClick} linkID="sound" className="link-box">
+    // <LinkBox vertical="true" image={soundImg}>sound</LinkBox>
+// </Link>

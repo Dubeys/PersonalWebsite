@@ -1,14 +1,14 @@
-$font-serif: 'Playfair Display', Times, 'Times New Roman', serif;
+$font-serif: 'Rubik', Times, 'Times New Roman', serif;
 $font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 %font-title {
     font-family: $font-serif;
     font-size: 2em;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 %font-link-big {
     font-family: $font-serif;
-    font-size: 2em;
-    font-weight: 600;
+    font-size: 3em;
+    font-weight: 500;
 }

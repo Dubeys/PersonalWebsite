@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class PageLink extends Component {
+export class Link extends Component {
 
     constructor() {
 
@@ -11,7 +11,7 @@ export class PageLink extends Component {
     }
 
     handlePageClick()  {
-        this.props.onClick(this.props.page,.5);
+        this.props.onClick(this.props.linkID,.5);
     }
 
     render() {
